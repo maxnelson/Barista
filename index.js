@@ -8,7 +8,7 @@ import glob from "fast-glob";
 import { handleClassnamesArray } from "./src/handleClassnamesArray.js";
 import { extractClassnames } from "./src/classnameExtractor/extractClassnames.js";
 
-export default function classnameExtractor(options = {}) {
+export default function baristaCSS(options = {}) {
   const filter = createFilter(
     options.include || /\.(js|ts|jsx|tsx|html)$/,
     options.exclude
