@@ -47,9 +47,11 @@ i.e.
 }
 ```
 
+# Setup
+
 ## Installation
 
-Install using npm
+1. Install using npm
 
 ```sh
 npm install @modularmoon/barista --save-dev
@@ -57,7 +59,13 @@ npm install @modularmoon/barista --save-dev
 
 ## Configuration
 
-Update the plugins object of your `vite.config` file to include the following plugin function.
+2. Include the following import statement in your `vite.config` file:
+
+```js
+import baristaCSS from "@modularmoon/barista";
+```
+
+3. Update the plugins object of your `vite.config` file to include the following plugin function.
 
 ```js
 classnameExtractor({
@@ -66,6 +74,10 @@ classnameExtractor({
       delimiter1: "_",
       delimiter2: "--",
     }),
+```
+
+```
+Note: make sure not to include any "}" characters in the import statement. Since this is the default module exported by the package.
 ```
 
 For clarity, your entire config object should look something like this:

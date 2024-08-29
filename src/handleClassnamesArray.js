@@ -30,6 +30,7 @@ export const handleClassnamesArray = async (
         propertyValue = formatVar(propertyValue, varIndex);
       }
       propertyValue = propertyValue.replaceAll("_", " ");
+      propertyValue = propertyValue.replaceAll("percent", "%");
       CSSRules +=
         "." +
         className +
