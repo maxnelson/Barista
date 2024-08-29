@@ -49,7 +49,7 @@ i.e.
 
 # Setup
 
-## 1. Install
+### 1. Install
 
 Install using npm
 
@@ -57,13 +57,15 @@ Install using npm
 npm install @modularmoon/barista --save-dev
 ```
 
-## 2. Configure
+### 2. Configure
 
 Include the following import statement in your `vite.config` file:
 
 ```js
 import baristaCSS from "@modularmoon/barista";
 ```
+
+> **Note:** 💡 Make sure not to include any `{` `}` characters in the import statement, as this is the default module exported by the package.
 
 Update the plugins object of your `vite.config` file to include the following plugin function.
 
@@ -75,8 +77,6 @@ classnameExtractor({
       delimiter2: "--",
     }),
 ```
-
-> **Note:** 💡 Make sure not to include any `{` `}` characters in the import statement, as this is the default module exported by the package.
 
 For clarity, your entire config object should look something like this:
 
@@ -92,7 +92,17 @@ For clarity, your entire config object should look something like this:
     ...],
     server: {...}});</code></pre>
 
-## 3. Include
+#### Configuration Options
+
+`include`: This is an array of filepaths + filename extensions that you want Barista to scan for classNames.
+
+`outputFilePath`: This is the filepath + filename where you'd like Barista to generate it's CSS file.
+
+`delimiter1`: This is the symbol you'd like to include as the first character of your non-semantic classNames, in order to indicate to Barista that you'd like it to parse / format these classnames into CSS Rules.
+
+`delimiter2`: This is the symbol you'd like to include inbetween the property and the value of the classname, in order to delineate the two.
+
+### 3. Include
 
 Now you can link to this local CSS file normally as a stylesheet, via your preferred method.
 
@@ -111,16 +121,6 @@ import "./css/barista.css";
 ## Usage
 
 In your HTML or JSX, whenever you want to include a non-semantic classname to simply apply a basic CSS property / value to an element, simply include the classname delineated with the delimiter options you specified in your plugin object.
-
-### Configuration Options
-
-`include`: This is an array of filepaths + filename extensions that you want Barista to scan for classNames.
-
-`outputFilePath`: This is the filepath + filename where you'd like Barista to generate it's CSS file.
-
-`delimiter1`: This is the symbol you'd like to include as the first character of your non-semantic classNames, in order to indicate to Barista that you'd like it to parse / format these classnames into CSS Rules.
-
-`delimiter2`: This is the symbol you'd like to include inbetween the property and the value of the classname, in order to delineate the two.
 
 ### License
 
