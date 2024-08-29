@@ -19,7 +19,7 @@ export default function baristaCSS(options = {}) {
         if (filter(file)) {
           console.log(`File changed: ${file}`);
           await extractClassnames(file, classNames);
-          handleClassnamesArray(
+          await handleClassnamesArray(
             classNames,
             options.outputFilepath,
             delimiter1,
@@ -40,7 +40,7 @@ export default function baristaCSS(options = {}) {
       for (const file of files) {
         if (filter(file)) {
           await extractClassnames(file, classNames);
-          handleClassnamesArray(
+          await handleClassnamesArray(
             classNames,
             options.outputFilepath,
             delimiter1,

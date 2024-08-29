@@ -1,7 +1,13 @@
 import path from "path";
-import { appendFileSync, writeFileSync } from "fs";
+import {
+  appendFileSync,
+  writeFileSync,
+  writeSync,
+  openSync,
+  closeSync,
+} from "fs";
 
-export const handleClassnamesArray = (
+export const handleClassnamesArray = async (
   classNamesArray,
   outputFilepath,
   delimiter1,
@@ -24,7 +30,6 @@ export const handleClassnamesArray = (
         propertyValue = formatVar(propertyValue, varIndex);
       }
       propertyValue = propertyValue.replaceAll("_", " ");
-
       CSSRules +=
         "." +
         className +
@@ -35,7 +40,13 @@ export const handleClassnamesArray = (
         ";\n}\n";
     }
   }
-  writeFileSync(fullPath, CSSRules, "utf-8");
+
+  const fullPathOpen = openSync(outputFilepath, "w");
+  writeSync(fullPathOpen, CSSRules, "utf-8");
+  closeSync(fullPathOpen);
+
+  //writeFileSync(fullPath, "");
+  //writeFileSync(fullPath, CSSRules, "utf-8");
 };
 
 const formatVar = (propertyValue, varIndex) => {
