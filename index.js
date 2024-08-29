@@ -18,6 +18,7 @@ export default function baristaCSS(options = {}) {
       server.watcher.on("change", async (file) => {
         if (filter(file)) {
           console.log(`File changed: ${file}`);
+          classNames = new Set();
           await extractClassnames(file, classNames);
           await handleClassnamesArray(
             classNames,
@@ -29,6 +30,7 @@ export default function baristaCSS(options = {}) {
       });
     },
     async buildStart() {
+      classNames = new Set();
       const fullPath = path.resolve(options.outputFilepath);
       const files = await glob(
         options.include || "src/**/*.{js,ts,jsx,tsx,html}",
