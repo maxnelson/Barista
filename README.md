@@ -76,9 +76,7 @@ classnameExtractor({
     }),
 ```
 
-<div style="background-color: #f6f8fa; border-radius: 5px; padding: 10px;">
-  Note: make sure not to include any "}" characters in the import statement. Since this is the default module exported by the package.
-</div>
+> **Note:** 💡 Make sure not to include any `{` `}` characters in the import statement, as this is the default module exported by the package.
 
 For clarity, your entire config object should look something like this:
 
