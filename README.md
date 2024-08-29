@@ -49,23 +49,23 @@ i.e.
 
 # Setup
 
-## Installation
+## 1. Install
 
-1. Install using npm
+Install using npm
 
 ```sh
 npm install @modularmoon/barista --save-dev
 ```
 
-## Configuration
+## 2. Configure
 
-2. Include the following import statement in your `vite.config` file:
+Include the following import statement in your `vite.config` file:
 
 ```js
 import baristaCSS from "@modularmoon/barista";
 ```
 
-3. Update the plugins object of your `vite.config` file to include the following plugin function.
+Update the plugins object of your `vite.config` file to include the following plugin function.
 
 ```js
 classnameExtractor({
@@ -92,18 +92,20 @@ For clarity, your entire config object should look something like this:
     ...],
     server: {...}});</code></pre>
 
+## 3. Include
+
 Now you can link to this local CSS file normally as a stylesheet, via your preferred method.
 
 i.e. via HTML:
 
 ```html
-<link rel="stylesheet" href="src/css/classyCSS.css" />
+<link rel="stylesheet" href="src/css/barista.css" />
 ```
 
 or via Javascript:
 
 ```js
-import "./css/classyCSS.css";
+import "./css/barista.css";
 ```
 
 ## Usage
@@ -122,4 +124,4 @@ In your HTML or JSX, whenever you want to include a non-semantic classname to si
 
 ### License
 
-Barista is distributed under [MIT License](https://github.com/maxnelson/barista/blob/main/LICENSE.md)
+Barista is distributed under an [MIT License](https://github.com/maxnelson/barista/blob/main/LICENSE.md)

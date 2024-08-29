@@ -20,8 +20,6 @@ export const handleClassnamesArray = async (
   }
   for (let className of classNamesArray) {
     if (className.startsWith(delimiter1)) {
-      console.log(className);
-
       const delimiterIndex = className.indexOf(delimiter2);
       const propertyName = className.slice(1, delimiterIndex);
       let propertyValue = className.slice(delimiterIndex + 2);
