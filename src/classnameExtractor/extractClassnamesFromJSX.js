@@ -26,8 +26,4 @@ export const extractClassnamesFromJSX = (content, classNames) => {
       }
     },
   });
-  console.log(
-    "Extracted classnames from JSX:",
-    Array.from(classNames).join(", ")
-  );
 };

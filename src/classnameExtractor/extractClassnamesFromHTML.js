@@ -4,8 +4,4 @@ export const extractClassnamesFromHTML = (content, classNames) => {
   while ((match = classRegex.exec(content)) !== null) {
     match[1].split(/\s+/).forEach((cls) => classNames.add(cls));
   }
-  console.log(
-    "Extracted classnames from HTML:",
-    Array.from(classNames).join(", ")
-  );
 };

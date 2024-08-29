@@ -5,6 +5,48 @@
 
 Barista is a vite/rollup plugin that scans your project's HTML / JSX and creates non-semantic CSS Rules based on classNames that conform to a format which you define.
 
+### Example
+
+Create a className by combining a CSS property and it's value, separated by a delimiter of your choice.
+
+i.e.
+
+```html
+<p className="_display--inline-block"></p>
+```
+
+After installing the plugin and defining delimiters in your `vite.config` file, barista will create a CSS rule that applies the designated CSS property / value to this className.
+
+i.e.
+
+```css
+._display--inline-block {
+  display: inline-block;
+}
+```
+
+### Some more examples
+
+```html
+<p className="_margin--1rem-0-10px-auto"></p>
+```
+
+```css
+._margin--1rem-0-10px-auto {
+  margin: 1rem 0 10px auto;
+}
+```
+
+```html
+<p className="_border--1px-solid-var-gray-100"></p>
+```
+
+```css
+._border--1px-solid-var-gray-100 {
+  border: 1px solid var(gray-100);
+}
+```
+
 ## Installation
 
 Install using npm
@@ -58,26 +100,15 @@ import "./css/classyCSS.css";
 
 In your HTML or JSX, whenever you want to include a non-semantic classname to simply apply a basic CSS property / value to an element, simply include the classname delineated with the delimiter options you specified in your plugin object.
 
-### Examples
-
-```html
-<p className="_display--inline-block"></p>
-```
-
-will be scanned, parsed and formatted into the following CSS Rule:
-
-```css
-._display--inline-block {
-  display: inline-block;
-}
-```
-
 ### Configuration Options
 
-include: This is an array of filepaths + filename extensions that you want Barista to scan for classNames.
-outputFilePath: This is the filepath + filename where you'd like Barista to generate it's CSS file.
-delimiter1: This is the symbol you'd like to include as the first character of your non-semantic classNames, in order to indicate to Barista that you'd like it to parse / format these classnames into CSS Rules.
-delimiter2: This is the symbol you'd like to include inbetween the property and the value of the classname, in order to delineate the two.
+`include`: This is an array of filepaths + filename extensions that you want Barista to scan for classNames.
+
+`outputFilePath`: This is the filepath + filename where you'd like Barista to generate it's CSS file.
+
+`delimiter1`: This is the symbol you'd like to include as the first character of your non-semantic classNames, in order to indicate to Barista that you'd like it to parse / format these classnames into CSS Rules.
+
+`delimiter2`: This is the symbol you'd like to include inbetween the property and the value of the classname, in order to delineate the two.
 
 ### License
 

@@ -6,8 +6,6 @@ import { extractClassnamesFromJSX } from "./extractClassnamesFromJSX.js";
 export const extractClassnames = async (file, classNames) => {
   try {
     const content = await fs.readFile(file, "utf-8");
-    console.log(`File content length: ${content.length} characters`);
-
     const extension = path.extname(file);
     if ([".js", ".ts", ".jsx", ".tsx"].includes(extension)) {
       extractClassnamesFromJSX(content, classNames);
