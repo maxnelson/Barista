@@ -1,31 +1,34 @@
-![Barista Logo](images/barista_logo.png)
+![Barista Logo](images/barista_logo.jpg)
 
-# Barista
-
+<div style="text-align: center;">
 ![GitHub repo size](https://img.shields.io/github/repo-size/maxnelson/barista)
 [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fmaxnelson%2Fbarista&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits+daily+%2F+total&edge_flat=false)](https://hits.seeyoufarm.com)
+</div>
 
-Barista is a vite/rollup plugin that scans your project's HTML / JSX and creates non-semantic CSS Rules based on classNames that conform to a format which you define.
+Barista is a vite plugin that scans your project's HTML / JSX and creates non-semantic CSS Rules based on classNames that conform to a format which you define.
 
 ### Example
 
-Create a className by combining a CSS property and it's value, separated by a delimiter of your choice.
-
-i.e.
+Include this in your HTML / JSX:
 
 ```html
 <p className="_display--inline-block"></p>
 ```
 
-After installing the plugin and defining delimiters in your `vite.config` file, barista will create a CSS rule that applies the designated CSS property / value to this className.
-
-i.e.
+And barista will create the following CSS rule
 
 ```css
 ._display--inline-block {
   display: inline-block;
 }
 ```
+
+### How's it work?
+
+You create a className by combining:
+an initial character of your choice (`"_"` in the above example) + a valid CSS property name + a custom delimiter of your choice (`"--"` in the above example) + a valid CSS value for the designated property.
+
+That's all! Barista scans your project and formats your classNames into CSS Rules.
 
 ### Some more examples
 
