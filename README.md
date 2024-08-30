@@ -1,3 +1,5 @@
+![Barista Logo](images/barista_logo.jpg)
+
 # Barista
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/maxnelson/barista)
