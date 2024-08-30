@@ -1,4 +1,4 @@
-![Barista Logo](images/barista_logo.jpg)
+![Barista Logo](images/barista_logo.png)
 
 # Barista
 
