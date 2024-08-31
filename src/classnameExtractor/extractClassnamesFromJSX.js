@@ -13,15 +13,27 @@ export const extractClassnamesFromJSX = (content, classNames) => {
           path.node.value.value
             .split(/\s+/)
             .forEach((cls) => classNames.add(cls));
-        } else if (
-          path.node.value.type === "JSXExpressionContainer" &&
-          path.node.value.expression.type === "TemplateLiteral"
-        ) {
-          path.node.value.expression.quasis.forEach((quasi) =>
-            quasi.value.raw
-              .split(/\s+/)
-              .forEach((cls) => cls && classNames.add(cls))
-          );
+        } else if (path.node.value.type === "JSXExpressionContainer") {
+          if (path.node.value.expression.type === "TemplateLiteral") {
+            path.node.value.expression.quasis.forEach((quasi) =>
+              quasi.value.raw
+                .split(/\s+/)
+                .forEach((cls) => cls && classNames.add(cls))
+            );
+          } else if (path.node.value.expression.type === "BinaryExpression") {
+            // Handle string concatenation
+            const extractFromBinaryExpression = (node) => {
+              if (node.type === "StringLiteral") {
+                node.value
+                  .split(/\s+/)
+                  .forEach((cls) => cls && classNames.add(cls));
+              } else if (node.type === "BinaryExpression") {
+                extractFromBinaryExpression(node.left);
+                extractFromBinaryExpression(node.right);
+              }
+            };
+            extractFromBinaryExpression(path.node.value.expression);
+          }
         }
       }
     },
