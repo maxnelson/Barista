@@ -77,7 +77,7 @@ import baristaCSS from "@modularmoon/barista";
 Update the plugins object of your `vite.config` file to include the following plugin function.
 
 ```js
-classnameExtractor({
+baristaCSS({
       include: ["src/**/*.{js,ts,jsx,tsx,html}"],
       outputFilepath: "src/css/barista.css",
       delimiter1: "_",
@@ -90,7 +90,7 @@ For clarity, your entire config object should look something like this:
 <pre><code>export default defineConfig({
   plugins: [
     react(),
-    <span style="color: red;">classnameExtractor({
+    <span style="color: red;">baristaCSS({
       include: ["src/**/*.{js,ts,jsx,tsx,html}"],
       outputFilepath: "src/css/barista.css",
       delimiter1: "_",

@@ -21,24 +21,35 @@ export default function baristaCSS(options = {}) {
         if (file.endsWith(outputFilepath)) {
           return [];
         } else {
-          testFunc(classNames, options, filter, delimiter1, delimiter2);
+          extractClassnamesAndCompileCSS(
+            classNames,
+            options,
+            filter,
+            delimiter1,
+            delimiter2
+          );
         }
       });
     },
     async buildStart() {
-      testFunc(classNames, options, filter, delimiter1, delimiter2);
+      extractClassnamesAndCompileCSS(
+        classNames,
+        options,
+        filter,
+        delimiter1,
+        delimiter2
+      );
     },
   };
 }
 
-export const testFunc = async (
+export const extractClassnamesAndCompileCSS = async (
   classNames,
   options,
   filter,
   delimiter1,
   delimiter2
 ) => {
-  console.log("TEST IF THIS IS FIRING1234");
   const files = await glob(options.include || "src/**/*.{js,ts,jsx,tsx,html}", {
     ignore: options.exclude,
     absolute: true,
@@ -54,4 +65,5 @@ export const testFunc = async (
       );
     }
   }
+  console.log(classNames);
 };
