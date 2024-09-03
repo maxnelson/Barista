@@ -29,6 +29,7 @@ export const handleClassnamesArray = async (
       }
       propertyValue = propertyValue.replaceAll("_", " ");
       propertyValue = propertyValue.replaceAll("percent", "%");
+      propertyValue = propertyValue.replaceAll("0p", "0.");
       CSSRules +=
         "." +
         className +

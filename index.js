@@ -1,5 +1,4 @@
 import { createFilter } from "@rollup/pluginutils";
-import path from "path";
 import glob from "fast-glob";
 import { handleClassnamesArray } from "./src/handleClassnamesArray.js";
 import { extractClassnames } from "./src/classnameExtractor/extractClassnames.js";
