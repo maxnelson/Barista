@@ -10,18 +10,15 @@ export default function baristaCSS(options = {}) {
   );
   const delimiter1 = options.delimiter1 || "_";
   const delimiter2 = options.delimiter2 || "--";
-  const outputFilepath = options.outputFilepath;
-  let classNames = new Set();
+  const outputFilepath = options.outputFilepath || "dist/css/barista.css";
   return {
     name: "vite-plugin-classname-extractor",
-
     configureServer(server) {
       server.watcher.on("change", async (file) => {
         if (file.endsWith(outputFilepath)) {
           return [];
         } else {
           extractClassnamesAndCompileCSS(
-            classNames,
             options,
             filter,
             delimiter1,
@@ -30,25 +27,19 @@ export default function baristaCSS(options = {}) {
         }
       });
     },
-    async buildStart() {
-      extractClassnamesAndCompileCSS(
-        classNames,
-        options,
-        filter,
-        delimiter1,
-        delimiter2
-      );
+    async generateBundle() {
+      extractClassnamesAndCompileCSS(options, filter, delimiter1, delimiter2);
     },
   };
 }
 
 export const extractClassnamesAndCompileCSS = async (
-  classNames,
   options,
   filter,
   delimiter1,
   delimiter2
 ) => {
+  let classNames = new Set();
   const files = await glob(options.include || "src/**/*.{js,ts,jsx,tsx,html}", {
     ignore: options.exclude,
     absolute: true,

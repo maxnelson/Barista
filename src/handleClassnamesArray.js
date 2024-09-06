@@ -5,6 +5,8 @@ import {
   writeSync,
   openSync,
   closeSync,
+  existsSync,
+  mkdirSync,
 } from "fs";
 
 export const handleClassnamesArray = async (
@@ -13,13 +15,16 @@ export const handleClassnamesArray = async (
   delimiter1,
   delimiter2
 ) => {
-  const fullPath = path.resolve(outputFilepath);
   let CSSRules = "";
   if (!Array.isArray(classNamesArray)) {
     classNamesArray = Array.from(classNamesArray);
   }
   for (let className of classNamesArray) {
-    if (className.startsWith(delimiter1)) {
+    if (
+      className.startsWith(delimiter1) &&
+      className.length > 1 &&
+      className.includes(delimiter2)
+    ) {
       const delimiterIndex = className.indexOf(delimiter2);
       const propertyName = className.slice(1, delimiterIndex);
       let propertyValue = className.slice(delimiterIndex + 2);
@@ -29,7 +34,7 @@ export const handleClassnamesArray = async (
       }
       propertyValue = propertyValue.replaceAll("_", " ");
       propertyValue = propertyValue.replaceAll("percent", "%");
-      propertyValue = propertyValue.replaceAll("0p", "0.");
+
       CSSRules +=
         "." +
         className +
@@ -41,12 +46,31 @@ export const handleClassnamesArray = async (
     }
   }
 
+  const outputDir = path.dirname(outputFilepath);
+  if (!existsSync(outputDir)) {
+    mkdirSync(outputDir, { recursive: true });
+  }
+  writeFileSync(outputFilepath, CSSRules);
+
+  /*
   const fullPathOpen = openSync(outputFilepath, "w");
   writeSync(fullPathOpen, CSSRules, "utf-8");
   closeSync(fullPathOpen);
+  */
+};
 
-  //writeFileSync(fullPath, "");
-  //writeFileSync(fullPath, CSSRules, "utf-8");
+const formatDecimal = (propertyValue) => {
+  let indexOf0p = propertyValue.indexOf("0p");
+  if (
+    !(
+      indexOf0p !== -1 &&
+      (propertyValue[indexOf0p + 2] === "x" ||
+        propertyValue[indexOf0p + 2] === "c")
+    )
+  ) {
+    propertyValue = propertyValue.replaceAll("0p", "0.");
+  }
+  return propertyValue;
 };
 
 const formatVar = (propertyValue, varIndex) => {

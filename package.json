@@ -1,6 +1,6 @@
 {
   "name": "@modularmoon/barista",
-  "version": "1.0.9",
+  "version": "1.1.0",
   "description": "Barista is a build tool that scans your project's HTML / JSX and creates non-semantic CSS Rules based on classNames that conform to a format which you define.",
   "keywords": [
     "CSS",
