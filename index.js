@@ -55,5 +55,4 @@ export const extractClassnamesAndCompileCSS = async (
       );
     }
   }
-  console.log(classNames);
 };

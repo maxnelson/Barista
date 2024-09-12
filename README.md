@@ -17,7 +17,7 @@ Include this in your HTML / JSX:
 <p className="_display--inline-block"></p>
 ```
 
-And barista will create the following CSS rule
+And barista will generate the following CSS rule
 
 ```css
 ._display--inline-block {
@@ -28,7 +28,7 @@ And barista will create the following CSS rule
 ### How's it work?
 
 You create a className by combining:
-an initial character of your choice (`"_"` in the above example) + a valid CSS property name + a custom delimiter of your choice (`"--"` in the above example) + a valid CSS value for the designated property.
+an initial character of your choice (i.e. `"_"` in the above example) + a valid CSS property name + a custom delimiter of your choice (i.e. `"--"` in the above example) + a valid CSS value for the designated property.
 
 That's all! Barista scans your project and formats your classNames into CSS Rules.
 
