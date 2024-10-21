@@ -1,13 +1,13 @@
+const isNumber = (char) => !isNaN(parseInt(char, 10));
+
 export const formatDecimal = (propertyValue) => {
-  let indexOf0p = propertyValue.indexOf("0p");
-  if (
-    !(
-      indexOf0p !== -1 &&
-      (propertyValue[indexOf0p + 2] === "x" ||
-        propertyValue[indexOf0p + 2] === "c")
-    )
-  ) {
-    propertyValue = propertyValue.replaceAll("0p", "0.");
+  let indexOfP = propertyValue.indexOf("p");
+  let condition0 = indexOfP !== -1;
+  let condition1 = isNumber(propertyValue[indexOfP - 1]);
+  let condition2 = isNumber(propertyValue[indexOfP + 1]);
+
+  if (condition0 && condition1 && condition2) {
+    propertyValue = propertyValue.replaceAll("p", ".");
   }
   return propertyValue;
 };
