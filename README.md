@@ -129,6 +129,11 @@ import "./css/barista.css";
 
 In your HTML or JSX, whenever you want to include a non-semantic classname to simply apply a basic CSS property / value to an element, simply include the classname delineated with the delimiter options you specified in your plugin object.
 
+## More Info
+A more detailed description and explanation of this tool can found in the following blog post:
+https://maxnelsonwebsite.com/sketchblog/css/barista
+
+
 ### License
 
 Barista is distributed under an [MIT License](https://github.com/maxnelson/barista/blob/main/LICENSE.md)
