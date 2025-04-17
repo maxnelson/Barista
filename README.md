@@ -3,7 +3,8 @@
 <div align="center">
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/maxnelson/barista)
-[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://github.com/maxnelson/barista&count_bg=%2379C83D&title_bg=%23555555&icon=github.svg&icon_color=%23E7E7E7&title=views&edge_flat=false)](https://hits.seeyoufarm.com)
+![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/maxnelson/barista/total)
+
 
 </div>
 
