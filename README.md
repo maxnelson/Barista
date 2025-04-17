@@ -3,6 +3,8 @@
 <div align="center">
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/maxnelson/barista)
+![NPM Downloads](https://img.shields.io/npm/d18m/%40modularmoon%2Fbarista)
+
 
 
 
