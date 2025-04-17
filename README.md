@@ -47,28 +47,14 @@ values of your class names.
 <b>Classname:</b>
 
 ```html
-<p className="_margin--1rem-0-10px-auto"></p>
+<p className="_color--white"></p>
 ```
 
 <b>Generated CSS Rule:</b>
 
 ```css
-._margin--1rem-0-10px-auto {
-	margin: 1rem 0 10px auto;
-}
-```
-
-<b>Classname:</b>
-
-```html
-<p className="_border--1px_solid_var_gray-100_"></p>
-```
-
-<b>Generated CSS Rule:</b>
-
-```css
-._border--1px_solid_var_gray-100_ {
-	border: 1px solid var(gray-100);
+._color--white {
+	color: white;
 }
 ```
 
@@ -83,6 +69,20 @@ values of your class names.
 ```css
 ._width--50percent {
 	width: 50%;
+}
+```
+
+<b>Classname:</b>
+
+```html
+<p className="_margin--1rem-0-10px-auto"></p>
+```
+
+<b>Generated CSS Rule:</b>
+
+```css
+._margin--1rem-0-10px-auto {
+	margin: 1rem 0 10px auto;
 }
 ```
 
