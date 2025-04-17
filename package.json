@@ -1,38 +1,38 @@
 {
-  "name": "@modularmoon/barista",
-  "version": "1.1.5",
-  "description": "Barista is a build tool that scans your project's HTML / JSX and creates non-semantic CSS Rules based on classNames that conform to a format which you define.",
-  "keywords": [
-    "CSS",
-    "className",
-    "class",
-    "vite",
-    "plugin",
-    "rollup"
-  ],
-  "type": "module",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Max Nelson (https://maxnelsonwebsite.com)",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/maxnelson/barista.git"
-  },
-  "license": "MIT",
-  "dependencies": {
-    "@rollup/pluginutils": "^5.1.0"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.25.2",
-    "@babel/parser": "^7.25.4",
-    "@babel/preset-env": "^7.25.4",
-    "@babel/traverse": "^7.25.4",
-    "fast-glob": "^3.3.2",
-    "postcss": "^8.4.41",
-    "posthtml-parser": "^0.12.0",
-    "prettier": "^3.3.3",
-    "vite": "^5.4.2"
-  }
+	"name": "@modularmoon/barista",
+	"version": "1.1.6",
+	"description": "Barista is a build tool that scans your project's HTML / JSX and creates non-semantic CSS Rules based on classNames that conform to a format which you define.",
+	"keywords": [
+		"CSS",
+		"className",
+		"class",
+		"vite",
+		"plugin",
+		"rollup"
+	],
+	"type": "module",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"author": "Max Nelson (https://maxnelsonwebsite.com)",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/maxnelson/barista.git"
+	},
+	"license": "MIT",
+	"dependencies": {
+		"@rollup/pluginutils": "^5.1.0"
+	},
+	"devDependencies": {
+		"@babel/core": "^7.25.2",
+		"@babel/parser": "^7.25.4",
+		"@babel/preset-env": "^7.25.4",
+		"@babel/traverse": "^7.25.4",
+		"fast-glob": "^3.3.2",
+		"postcss": "^8.4.41",
+		"posthtml-parser": "^0.12.0",
+		"prettier": "^3.3.3",
+		"vite": "^5.4.2"
+	}
 }
