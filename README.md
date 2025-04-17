@@ -1,12 +1,27 @@
 ![Barista Logo](images/barista_logo.jpg)
 
 <div align="center">
-
-![GitHub repo size](https://img.shields.io/github/repo-size/maxnelson/barista)
-![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/maxnelson/Barista/total?color=fce023)
-
-
-
+<!-- Badges -->
+<p align="center">
+  <a href="https://github.com/maxnelson/Barista">
+    <img src="https://img.shields.io/github/stars/maxnelson/Barista?style=for-the-badge" alt="GitHub stars">
+  </a>
+  <a href="https://github.com/maxnelson/Barista/forks">
+    <img src="https://img.shields.io/github/forks/maxnelson/Barista?style=for-the-badge" alt="GitHub forks">
+  </a>
+  <a href="https://github.com/maxnelson/Barista/issues">
+    <img src="https://img.shields.io/github/issues/maxnelson/Barista?style=for-the-badge" alt="GitHub issues">
+  </a>
+  <a href="https://github.com/maxnelson/Barista/pulls">
+    <img src="https://img.shields.io/github/issues-pr/maxnelson/Barista?style=for-the-badge" alt="GitHub pull requests">
+  </a>
+  <a href="https://github.com/maxnelson/Barista/blob/main/LICENSE">
+    <img src="https://img.shields.io/github/license/maxnelson/Barista?style=for-the-badge" alt="License">
+  </a>
+  <a href="https://hits.seeyoufarm.com">
+    <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://github.com/maxnelson/Barista&count_bg=%2379C83D&title_bg=%23555555&icon=github.svg&icon_color=%23FFFFFF&title=Views&edge_flat=false" alt="Hits">
+  </a>
+</p>
 </div>
 
 Barista is a vite plugin that scans your project's HTML / JSX and creates non-semantic CSS Rules
