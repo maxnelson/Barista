@@ -3,7 +3,7 @@
 <div align="center">
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/maxnelson/barista)
-![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/maxnelson/barista/total?color=fce023)
+![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/maxnelson/Barista/total?color=fce023)
 
 
 
